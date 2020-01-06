@@ -9,6 +9,9 @@ app = Flask(
 def index():
   return "hehsskfnlxncsdkz"
 
+@app.route('/truth')
+def get_truth():
+  return "Puns are the worst"
 
 app.run(
    '0.0.0.0',
