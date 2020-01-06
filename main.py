@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, jsonify
 
 app = Flask(
   __name__
@@ -11,7 +11,11 @@ def index():
 
 @app.route('/truth')
 def get_truth():
-  return "Puns are the worst"
+  message = {
+    'author': 'truthbot',
+    'text': 'Puns are the worst'
+  }
+  return jsonify(message)
 
 app.run(
    '0.0.0.0',
