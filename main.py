@@ -1,3 +1,15 @@
-import requests
+from flask import Flask
 
-print("Hello world")
+app = Flask(
+  __name__
+)
+
+
+@app.route('/index')
+def index():
+  return "hehsskfnlxncsdkz"
+
+
+app.run()
+
+
