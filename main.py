@@ -9,7 +9,7 @@ app = Flask(
 def index():
   return "hehsskfnlxncsdkz"
 
-@app.route('/truth')
+@app.route('/truth', methods=["GET", "POST"])
 def get_truth():
   message = {
     'author': 'truthbot',
