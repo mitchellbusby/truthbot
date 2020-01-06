@@ -1,4 +1,5 @@
 from flask import Flask, jsonify
+import random
 
 app = Flask(
   __name__
@@ -9,11 +10,17 @@ app = Flask(
 def index():
   return "hehsskfnlxncsdkz"
 
+TRUTHS = [
+  'Trams are the best',
+  'Puns are the worst'
+]
+
 @app.route('/truth', methods=["GET", "POST"])
 def get_truth():
+  text = random.choice(TRUTHS)
   message = {
     'author': 'truthbot',
-    'text': 'Puns are the worst'
+    'text': text
   }
   return jsonify(message)
 
