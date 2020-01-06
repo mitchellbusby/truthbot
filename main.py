@@ -10,6 +10,8 @@ def index():
   return "hehsskfnlxncsdkz"
 
 
-app.run()
+app.run(
+   '0.0.0.0'
+)
 
 
