@@ -1,4 +1,4 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 import random
 
 app = Flask(
@@ -22,7 +22,21 @@ def get_truth():
     'author': 'truthbot',
     'text': text
   }
+  request.args['foo']
   return jsonify(message)
+
+@app.route('/pizza', methods=["GET", "POST"])
+def get_pizza_recipe():
+  return jsonify({
+    'version': '0.1',
+    'response': {
+      'outputSpeech': {
+        'type': 'PlainText',
+        'text': 'Lets play Sasha says'
+      },
+      'shouldEndSession': True
+    }
+  })
 
 app.run(
    '0.0.0.0',
