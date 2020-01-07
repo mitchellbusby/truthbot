@@ -22,7 +22,6 @@ def get_truth():
     'author': 'truthbot',
     'text': text
   }
-  request.args['foo']
   return jsonify(message)
 
 @app.route('/pizza', methods=["GET", "POST"])
